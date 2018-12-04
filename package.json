@@ -1,0 +1,35 @@
+{
+  "name": "React-Tooltip-Controller",
+  "homepage": "https://dbilgili.github.io/React-Tooltip-Controller",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.5.1",
+    "immer": "^1.7.4",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-portal": "^4.1.5",
+    "react-scripts": "2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts-with-stylus start src/styles/main.styl",
+    "build": "react-scripts-with-stylus build src/styles/main.styl",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "create-react-app-stylus": "^1.1.1",
+    "gh-pages": "^2.0.1"
+  }
+}

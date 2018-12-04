@@ -1,0 +1,29 @@
+.ToolTip
+  display: flex
+  justify-content: center
+  align-items: center
+  color: rgb(255, 107, 0)
+  width: 130px
+  height: 50px
+  background-color: white
+  position: relative
+  box-shadow: 0px 3px 4px 0px rgba(235,235,235,1)
+  border-radius: 3px
+
+  &::before
+    content:''
+    position: absolute
+    left: 58px
+    top: -10px
+    height: 20px
+    width: 20px
+    background-color: white
+    transform: rotate(45deg)
+
+  &.advanced
+    display: block
+    height: initial
+    padding: 20px
+
+    &::before
+      left: 75px

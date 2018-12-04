@@ -1,0 +1,89 @@
+body {
+  background-color: #f5f6fa;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.ToolTip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff6b00;
+  width: 130px;
+  height: 50px;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0px 3px 4px 0px #ebebeb;
+  border-radius: 3px;
+}
+.ToolTip::before {
+  content: '';
+  position: absolute;
+  left: 58px;
+  top: -10px;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.ToolTip.advanced {
+  display: block;
+  height: initial;
+  padding: 20px;
+}
+.ToolTip.advanced::before {
+  left: 75px;
+}
+.Examples {
+  margin-bottom: 200px;
+}
+.Examples h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+.Examples .links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.Examples .links a {
+  color: #9a9a9a;
+}
+.Examples .links a:hover {
+  color: #737373;
+}
+.Examples .links a:first-of-type {
+  margin-right: 20px;
+}
+.Examples .example {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+}
+.Examples .example pre:nth-child(1) {
+  margin-right: 100px;
+}
+pre > code {
+  white-space: pre;
+  margin-left: -7em;
+  display: block;
+  font-size: 0.9rem;
+}
+.md {
+  border: 1px #808080 solid;
+  border-radius: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ebebeb;
+}
+.margin-right {
+  margin-right: 20px !important;
+}
+.react-tooltip-5 {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.react-tooltip-5.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,51 @@
+.Examples
+  margin-bottom: 200px
+
+  h1
+    text-align: center
+    margin-top: 50px
+
+  .links
+    display: flex
+    justify-content: center
+    margin-bottom: 50px
+
+    a
+      color: rgb(154, 154, 154)
+      &:hover
+        color: rgb(115, 115, 115)
+      &:first-of-type
+        margin-right: 20px
+
+  .example
+    display: flex
+    margin-left: 20px
+    align-items: center
+
+    pre
+      &:nth-child(1)
+        margin-right: 100px
+
+pre > code
+    white-space: pre
+    margin-left: -7.00em
+    display: block
+    font-size: 0.9rem
+
+
+.md
+  border 1px grey solid
+  border-radius: 4px
+  padding-left: 4px
+  padding-right: 4px
+  background-color: rgb(235, 235, 235)
+
+.margin-right
+  margin-right: 20px !important
+
+.react-tooltip-5
+  opacity: 0
+  transform: translateY(10px)
+  &.fadeIn
+    opacity: 1
+    transform: translateY(0)
