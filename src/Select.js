@@ -32,34 +32,18 @@ class Select extends React.Component{
   }
 
   render(){
-    const { detect, openMenu, closeMenu, timeOutFunc } = this.props
+    const { detect, openMenu, closeMenu, timeOutFunc, children } = this.props
     if(detect === "click"){
-      return(
-        <React.Fragment>
-          {React.cloneElement(this.props.children, {ref: this.selector, onClick: openMenu, onTouchEnd: openMenu})}
-        </React.Fragment>
-      )
+      return React.cloneElement(children, {ref: this.selector, onClick: openMenu, onTouchEnd: openMenu})
     }
     else if(detect === 'hover'){
-      return(
-        <React.Fragment>
-          {React.cloneElement(this.props.children, {ref: this.selector, onMouseEnter: openMenu, onMouseLeave: closeMenu, onTouchEnd: openMenu})}
-        </React.Fragment>
-      )
+      return React.cloneElement(children, {ref: this.selector, onMouseEnter: openMenu, onMouseLeave: closeMenu, onTouchEnd: openMenu})
     }
     else if(detect === 'hover-hold'){
-      return(
-        <React.Fragment>
-          {React.cloneElement(this.props.children, {ref: this.selector, onMouseEnter: openMenu, onTouchEnd: openMenu})}
-        </React.Fragment>
-      )
+      return React.cloneElement(children, {ref: this.selector, onMouseEnter: openMenu, onTouchEnd: openMenu})
     }
     else if(detect === 'hover-interact'){
-      return(
-        <React.Fragment>
-          {React.cloneElement(this.props.children, {ref: this.selector, onMouseEnter: openMenu, onMouseLeave: timeOutFunc, onTouchEnd: openMenu})}
-        </React.Fragment>
-      )
+      return React.cloneElement(children, {ref: this.selector, onMouseEnter: openMenu, onMouseLeave: timeOutFunc, onTouchEnd: openMenu})
     }
     return null
   }
