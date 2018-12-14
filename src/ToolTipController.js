@@ -1,6 +1,6 @@
-import React from 'react';
-import produce from 'immer';
-import {Portal} from 'react-portal';
+import React from 'react'
+import produce from 'immer'
+import ReactDOM from 'react-dom'
 
 class ToolTipController extends React.PureComponent{
   constructor(props) {
@@ -174,7 +174,7 @@ class ToolTipController extends React.PureComponent{
 
   render(){
     const{id, children, animation, closeOnClick, detect} = this.props
-    const{isOpen, animate} = this.state
+    const{isOpen, animate, divStyle} = this.state
 
     const inputChildren = React.Children.map(children, (child, index) => {
       if(child.type.displayName === "Select"){
@@ -182,20 +182,18 @@ class ToolTipController extends React.PureComponent{
       }
       else{
         return(
-          <React.Fragment>
-            {isOpen && <Portal>
-              <span
-                ref={this.tooltip}
-                className={animate ? `react-tooltip-absolute-container react-tooltip-${id} ${animation}` : `react-tooltip-absolute-container react-tooltip-${id}`}
-                style={this.state.divStyle}
-                onClick={closeOnClick ? null : e => e.stopPropagation()}
-                onTouchEnd={e => e.stopPropagation()}
-                onMouseEnter={detect === "hover-interact" ? this.clearTimeoutFunc : undefined}
-                onMouseLeave={detect === "hover-interact" ? this.closeMenu : undefined}>
-                {React.cloneElement(child)}
-              </span>
-            </Portal>}
-          </React.Fragment>
+          isOpen && ReactDOM.createPortal(
+            <span
+              ref={this.tooltip}
+              className={animate ? `react-tooltip-absolute-container react-tooltip-${id} ${animation}` : `react-tooltip-absolute-container react-tooltip-${id}`}
+              style={divStyle}
+              onClick={closeOnClick ? null : e => e.stopPropagation()}
+              onTouchEnd={e => e.stopPropagation()}
+              onMouseEnter={detect === "hover-interact" ? this.clearTimeoutFunc : undefined}
+              onMouseLeave={detect === "hover-interact" ? this.closeMenu : undefined}>
+              {React.cloneElement(child)}
+            </span>
+          , document.body)
         )
       }
     })
